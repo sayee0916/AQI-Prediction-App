@@ -1,120 +1,140 @@
 🌍 Air Quality Index Prediction Using Machine Learning
-Overview
 
-Air pollution has become one of the most serious environmental issues worldwide, affecting human health, ecosystems, and climate. The Air Quality Index (AQI) is a standardized indicator used to measure and communicate the level of air pollution in a particular area.
+📌 Overview
 
-This project develops a Machine Learning-based AQI Prediction System that estimates air quality levels based on major air pollutants.
+Air pollution is one of the most serious environmental challenges affecting human health and ecosystems worldwide. The Air Quality Index (AQI) is a standardized metric used to measure and communicate air pollution levels in a particular region.
 
-The model predicts AQI using pollutant concentration values such as:
+This project develops a Machine Learning-based AQI Prediction System that estimates air quality based on major pollutant concentrations.
 
-• PM2.5 – Fine particulate matter
-• PM10 – Coarse particulate matter
-• NO₂ – Nitrogen Dioxide
-• SO₂ – Sulfur Dioxide
-• CO – Carbon Monoxide
-• O₃ – Ozone
+The system analyzes key pollutants including:
 
-A Streamlit web application is deployed to allow users to input pollutant values and instantly predict the AQI level.
+PM2.5 – Fine particulate matter
 
-Problem Statement
+PM10 – Coarse particulate matter
 
-Air pollution is responsible for millions of premature deaths every year and significantly impacts public health.
+NO₂ – Nitrogen Dioxide
 
-Monitoring air quality in real-time and predicting AQI levels helps governments, researchers, and citizens take preventive measures.
+SO₂ – Sulfur Dioxide
+
+CO – Carbon Monoxide
+
+O₃ – Ozone
+
+A Streamlit web application allows users to input pollutant values and instantly predict AQI levels.
+
+⚠️ Problem Statement
+
+Air pollution causes millions of premature deaths each year and has severe health impacts on respiratory and cardiovascular systems.
 
 However:
 
-• Manual analysis of air pollution data is complex
-• Air quality varies across cities and time
-• Accurate prediction requires analyzing multiple pollutant factors simultaneously
+Air quality varies significantly across cities and time
 
-Therefore, an automated machine learning system is needed to analyze pollutant levels and predict AQI efficiently and accurately.
+Multiple pollutants contribute to AQI simultaneously
 
-Objectives
+Manual monitoring and prediction is complex
 
-• Build a Machine Learning model capable of predicting AQI levels
-• Analyze the impact of different pollutants on air quality
-• Perform data preprocessing and cleaning for reliable predictions
-• Deploy the model using Streamlit for real-time prediction
-• Create an interactive interface where users can input pollutant values
+Therefore, an automated machine learning system is required to analyze pollution data and predict AQI efficiently.
 
-Dataset
+🎯 Objectives
 
-The dataset used in this project contains city-wise air pollution data from India.
+The main objectives of this project are:
 
-Dataset Features
-Feature	Description
-PM2.5	Fine particulate matter concentration
-PM10	Coarse particulate matter concentration
-NO₂	Nitrogen dioxide level
-SO₂	Sulfur dioxide level
-CO	Carbon monoxide concentration
-O₃	Ozone concentration
-City	Location of monitoring station
-AQI	Target variable representing air quality
+Develop a Machine Learning model capable of predicting AQI
 
-The dataset was cleaned and preprocessed before training the model.
+Analyze the impact of different pollutants on air quality
 
-Data Preprocessing
+Perform data preprocessing and cleaning for accurate predictions
 
-The following steps were performed before training the model:
+Build an interactive web application using Streamlit
 
-• Handling missing values
-• Removing inconsistent records
-• Feature selection
-• Encoding categorical variables (City)
-• Data normalization
+Enable real-time AQI prediction based on pollutant inputs
 
-These steps ensure that the machine learning model learns meaningful patterns from the dataset.
+📊 Dataset
 
-Machine Learning Model
+The dataset contains city-wise air pollution measurements from India.
 
-A Regression-based Machine Learning model was trained to predict AQI values.
+| Feature | Description                              |
+| ------- | ---------------------------------------- |
+| PM2.5   | Fine particulate matter concentration    |
+| PM10    | Coarse particulate matter concentration  |
+| NO₂     | Nitrogen dioxide level                   |
+| SO₂     | Sulfur dioxide level                     |
+| CO      | Carbon monoxide concentration            |
+| O₃      | Ozone concentration                      |
+| City    | Monitoring station location              |
+| AQI     | Target variable representing air quality |
+
+
+The dataset was cleaned and processed before training the model.
+
+🧹 Data Preprocessing
+
+Before training the model, several preprocessing steps were performed:
+
+Handling missing values
+
+Removing inconsistent or invalid records
+
+Feature selection
+
+Encoding categorical variables (City)
+
+Preparing data for machine learning models
+
+These steps improve the accuracy and reliability of the prediction model.
+
+🤖 Machine Learning Model
+
+A Regression-based Machine Learning model was trained to predict AQI values based on pollutant concentrations.
 
 Model Workflow
 
-1️⃣ Data preprocessing
-2️⃣ Feature selection
-3️⃣ Model training
-4️⃣ Model evaluation
-5️⃣ Model deployment
+Data preprocessing
 
-The trained model is saved as:
+Feature selection
 
-aqi_model.pkl
+Model training
 
-The feature structure is stored in:
+Model evaluation
 
-columns.pkl
-AQI Classification Scale
+Model deployment
 
-The predicted AQI values fall into different categories based on pollution severity.
+🌈 AQI Classification Scale
 
-AQI Range	Category
-0 – 50	Good
-51 – 100	Moderate
-101 – 150	Unhealthy for Sensitive Groups
-151 – 200	Unhealthy
-201 – 300	Very Unhealthy
-301 – 500	Hazardous
+AQI values are categorized based on pollution severity:
 
-These categories help interpret the AQI value in terms of health impact.
+| AQI Range | Category                       |
+| --------- | ------------------------------ |
+| 0 – 50    | Good                           |
+| 51 – 100  | Moderate                       |
+| 101 – 150 | Unhealthy for Sensitive Groups |
+| 151 – 200 | Unhealthy                      |
+| 201 – 300 | Very Unhealthy                 |
+| 301 – 500 | Hazardous                      |
 
-Web Application (Streamlit)
 
-A Streamlit web application is developed to make AQI prediction interactive.
+These categories help interpret AQI levels in terms of health impact.
 
-Application Features
+💻 Web Application (Streamlit)
 
-• User-friendly interface
-• Input pollutant values easily
-• Select city from dropdown
-• Instant AQI prediction
-• Visual AQI gauge representation
+A Streamlit web application was developed to allow users to interact with the model.
 
-Users can quickly evaluate air quality levels by entering pollutant concentrations.
+Features
 
-Project Structure
+User-friendly interface
+
+Input pollutant values easily
+
+Select city from dropdown
+
+Instant AQI prediction
+
+Interactive AQI visualization
+
+Users can quickly evaluate air quality conditions using the web application.
+
+📂 Project Structure
 AQI_Prediction
 │
 ├── app.py
@@ -122,40 +142,47 @@ AQI_Prediction
 ├── columns.pkl
 ├── requirements.txt
 └── README.md
-Deployment
+🚀 Deployment
 
-The project is deployed using Streamlit Cloud.
+The application is deployed using Streamlit Cloud, allowing users to access the AQI prediction system online.
 
-Users can access the web application online and predict AQI values in real time.
+Users can enter pollutant levels and receive instant AQI predictions through the deployed web interface.
 
-Technologies Used
+🛠 Technologies Used
 Technology	Purpose
 Python	Programming language
-Pandas	Data processing
-NumPy	Numerical operations
+Pandas	Data analysis and preprocessing
+NumPy	Numerical computations
 Scikit-learn	Machine learning model
-Streamlit	Web application
+Streamlit	Web application framework
 Plotly	Data visualization
-Applications
 
-This system can be useful for:
+🌍 Applications
 
-• Environmental monitoring
-• Smart city planning
-• Pollution awareness systems
-• Public health monitoring
-• Government environmental agencies
+This system can be used for:
 
-Future Improvements
+Environmental monitoring systems
 
-• Integration with real-time air quality APIs
-• Time-series forecasting of AQI trends
-• Mobile application for AQI monitoring
-• Geographic AQI visualization on maps
+Smart city pollution analysis
 
-Author
+Public health awareness tools
+
+Government environmental agencies
+
+Pollution research and analysis
+
+🔮 Future Improvements
+
+Possible future enhancements include:
+
+Integration with real-time air quality APIs
+
+Time-series AQI forecasting
+
+Mobile application for AQI monitoring
+
+Interactive AQI maps for different cities
+
+👩‍💻 Author
 
 Sayali Sanjay Chidrawar
-
-B.Tech Computer Science Graduate (2025)
-Interested in Data Analytics, Machine Learning, and Data Visualization.
