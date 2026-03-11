@@ -1,197 +1,161 @@
-🌍 Air Quality Index (AQI) Prediction using Machine Learning
+🌍 Air Quality Index Prediction Using Machine Learning
+Overview
 
-📌 Project Overview
+Air pollution has become one of the most serious environmental issues worldwide, affecting human health, ecosystems, and climate. The Air Quality Index (AQI) is a standardized indicator used to measure and communicate the level of air pollution in a particular area.
 
-Air pollution is a major environmental and public health concern.
-This project aims to predict the Air Quality Index (AQI) using machine learning models based on pollutant concentration levels.
+This project develops a Machine Learning-based AQI Prediction System that estimates air quality levels based on major air pollutants.
 
-The model analyzes key pollutants such as PM2.5, PM10, NO₂, SO₂, CO, and O₃ to estimate AQI for multiple Indian cities.
+The model predicts AQI using pollutant concentration values such as:
 
-The final model is deployed as an interactive web application using Streamlit, allowing users to input pollutant values and obtain AQI predictions in real time.
+• PM2.5 – Fine particulate matter
+• PM10 – Coarse particulate matter
+• NO₂ – Nitrogen Dioxide
+• SO₂ – Sulfur Dioxide
+• CO – Carbon Monoxide
+• O₃ – Ozone
 
+A Streamlit web application is deployed to allow users to input pollutant values and instantly predict the AQI level.
 
-🎯 Problem Statement
+Problem Statement
 
-Accurate prediction of AQI helps in:
+Air pollution is responsible for millions of premature deaths every year and significantly impacts public health.
 
-Environmental monitoring
+Monitoring air quality in real-time and predicting AQI levels helps governments, researchers, and citizens take preventive measures.
 
-Public health advisories
+However:
 
-Government policy planning
+• Manual analysis of air pollution data is complex
+• Air quality varies across cities and time
+• Accurate prediction requires analyzing multiple pollutant factors simultaneously
 
-Pollution control measures
+Therefore, an automated machine learning system is needed to analyze pollutant levels and predict AQI efficiently and accurately.
 
-The goal of this project is to build a regression-based machine learning model to predict AQI using pollutant features.
+Objectives
 
+• Build a Machine Learning model capable of predicting AQI levels
+• Analyze the impact of different pollutants on air quality
+• Perform data preprocessing and cleaning for reliable predictions
+• Deploy the model using Streamlit for real-time prediction
+• Create an interactive interface where users can input pollutant values
 
-📊 Dataset Information
+Dataset
 
-Dataset: India City AQI Dataset
+The dataset used in this project contains city-wise air pollution data from India.
 
-Time Period: 2015 – 2023
+Dataset Features
+Feature	Description
+PM2.5	Fine particulate matter concentration
+PM10	Coarse particulate matter concentration
+NO₂	Nitrogen dioxide level
+SO₂	Sulfur dioxide level
+CO	Carbon monoxide concentration
+O₃	Ozone concentration
+City	Location of monitoring station
+AQI	Target variable representing air quality
 
-Cities: 10 major Indian cities
+The dataset was cleaned and preprocessed before training the model.
 
-Total Records: ~32,000+
+Data Preprocessing
 
-Features Used
-PM2.5
-PM10
-NO₂
-SO₂
-CO
-O₃
-City (encoded)
+The following steps were performed before training the model:
 
-Target Variable
-AQI (Air Quality Index)
+• Handling missing values
+• Removing inconsistent records
+• Feature selection
+• Encoding categorical variables (City)
+• Data normalization
 
+These steps ensure that the machine learning model learns meaningful patterns from the dataset.
 
-⚙️ Data Preprocessing
+Machine Learning Model
 
-The following preprocessing steps were performed:
+A Regression-based Machine Learning model was trained to predict AQI values.
 
-Handling missing values using median imputation
+Model Workflow
 
-Removing records where AQI was missing
+1️⃣ Data preprocessing
+2️⃣ Feature selection
+3️⃣ Model training
+4️⃣ Model evaluation
+5️⃣ Model deployment
 
-Encoding categorical feature (City)
+The trained model is saved as:
 
-Time-based train-test split to avoid data leakage
+aqi_model.pkl
 
-Train Data: 2015 – 2021
-Test Data: 2022 – 2023
+The feature structure is stored in:
 
+columns.pkl
+AQI Classification Scale
 
-🔎 Exploratory Data Analysis (EDA)
+The predicted AQI values fall into different categories based on pollution severity.
 
-Key observations:
+AQI Range	Category
+0 – 50	Good
+51 – 100	Moderate
+101 – 150	Unhealthy for Sensitive Groups
+151 – 200	Unhealthy
+201 – 300	Very Unhealthy
+301 – 500	Hazardous
 
-AQI distribution is right-skewed
+These categories help interpret the AQI value in terms of health impact.
 
-PM2.5 shows strongest correlation with AQI
+Web Application (Streamlit)
 
-Extreme AQI spikes were observed
+A Streamlit web application is developed to make AQI prediction interactive.
 
-Presence of outliers
+Application Features
 
-Relationships between pollutants and AQI are non-linear
+• User-friendly interface
+• Input pollutant values easily
+• Select city from dropdown
+• Instant AQI prediction
+• Visual AQI gauge representation
 
+Users can quickly evaluate air quality levels by entering pollutant concentrations.
 
-🤖 Machine Learning Models Implemented
+Project Structure
+AQI_Prediction
+│
+├── app.py
+├── aqi_model.pkl
+├── columns.pkl
+├── requirements.txt
+└── README.md
+Deployment
 
-The following regression models were trained and evaluated:
+The project is deployed using Streamlit Cloud.
 
-Linear Regression
+Users can access the web application online and predict AQI values in real time.
 
-Decision Tree Regressor
+Technologies Used
+Technology	Purpose
+Python	Programming language
+Pandas	Data processing
+NumPy	Numerical operations
+Scikit-learn	Machine learning model
+Streamlit	Web application
+Plotly	Data visualization
+Applications
 
-Random Forest Regressor
+This system can be useful for:
 
-XGBoost Regressor
+• Environmental monitoring
+• Smart city planning
+• Pollution awareness systems
+• Public health monitoring
+• Government environmental agencies
 
-Validation Strategy
+Future Improvements
 
-TimeSeriesSplit (5 splits)
+• Integration with real-time air quality APIs
+• Time-series forecasting of AQI trends
+• Mobile application for AQI monitoring
+• Geographic AQI visualization on maps
 
-GridSearchCV for hyperparameter tuning
+Author
 
-
-📈 Model Performance Comparison
-
-| Model             | MAE      | RMSE      | R² Score  |
-| ----------------- | -------- | --------- | --------- |
-| Linear Regression | 5.07     | 20.24     | 0.689     |
-| Decision Tree     | 5.37     | 18.09     | 0.751     |
-| Random Forest     | 3.02     | 17.62     | 0.764     |
-| XGBoost           | **2.93** | **17.35** | **0.771** |
-
-
-
-🏆 Best Model
-
-XGBoost Regressor
-
-Reasons:
-
-Highest R² score
-
-Lowest prediction error
-
-Better generalization on unseen data
-
-
-📊 Residual Analysis
-
-Residuals mostly centered around 0
-
-Few extreme AQI values increase RMSE
-
-Model performs well for moderate AQI levels
-
-Slight difficulty predicting extreme pollution spikes
-
-
-📌 Key Insights
-
-PM2.5 is the most influential pollutant
-
-Ensemble models outperform linear models
-
-AQI shows strong non-linear behavior
-
-Time-aware validation improves reliability
-
-Boosting models capture complex pollutant interactions
-
-
-🌐 Web Application (Deployment)
-
-The trained model is deployed using Streamlit to allow real-time AQI predictions.
-
-Features of Web App
-
-User-friendly interface
-
-Input pollutant values
-
-Select city
-
-Predict AQI instantly
-
-
-🔗 Live App
-
-https://sayee-aqi-prediction.streamlit.app
-
-
-🛠️ Technologies Used
-
-Python
-
-Pandas
-
-NumPy
-
-Scikit-learn
-
-XGBoost
-
-Streamlit
-
-Joblib
-
-
-🚀 Future Improvements
-
-Add weather parameters (temperature, humidity, wind speed)
-
-Incorporate lag features for time-series prediction
-
-Develop real-time AQI forecasting system
-
-Improve predictions for extreme pollution events
-
-👩‍💻 Author  
 Sayali Sanjay Chidrawar
+
+B.Tech Computer Science Graduate (2025)
+Interested in Data Analytics, Machine Learning, and Data Visualization.
