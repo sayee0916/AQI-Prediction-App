@@ -9,6 +9,7 @@ The model analyzes key pollutants such as PM2.5, PM10, NO₂, SO₂, CO, and O�
 
 The final model is deployed as an interactive web application using Streamlit, allowing users to input pollutant values and obtain AQI predictions in real time.
 
+
 🎯 Problem Statement
 
 Accurate prediction of AQI helps in:
@@ -22,6 +23,7 @@ Government policy planning
 Pollution control measures
 
 The goal of this project is to build a regression-based machine learning model to predict AQI using pollutant features.
+
 
 📊 Dataset Information
 
@@ -45,6 +47,7 @@ City (encoded)
 Target Variable
 AQI (Air Quality Index)
 
+
 ⚙️ Data Preprocessing
 
 The following preprocessing steps were performed:
@@ -60,6 +63,7 @@ Time-based train-test split to avoid data leakage
 Train Data: 2015 – 2021
 Test Data: 2022 – 2023
 
+
 🔎 Exploratory Data Analysis (EDA)
 
 Key observations:
@@ -73,6 +77,7 @@ Extreme AQI spikes were observed
 Presence of outliers
 
 Relationships between pollutants and AQI are non-linear
+
 
 🤖 Machine Learning Models Implemented
 
@@ -91,6 +96,7 @@ Validation Strategy
 TimeSeriesSplit (5 splits)
 
 GridSearchCV for hyperparameter tuning
+
 
 📈 Model Performance Comparison
 
@@ -115,6 +121,7 @@ Lowest prediction error
 
 Better generalization on unseen data
 
+
 📊 Residual Analysis
 
 Residuals mostly centered around 0
@@ -124,6 +131,7 @@ Few extreme AQI values increase RMSE
 Model performs well for moderate AQI levels
 
 Slight difficulty predicting extreme pollution spikes
+
 
 📌 Key Insights
 
@@ -136,6 +144,7 @@ AQI shows strong non-linear behavior
 Time-aware validation improves reliability
 
 Boosting models capture complex pollutant interactions
+
 
 🌐 Web Application (Deployment)
 
@@ -151,9 +160,11 @@ Select city
 
 Predict AQI instantly
 
+
 🔗 Live App
 
 https://sayee-aqi-prediction.streamlit.app
+
 
 🛠️ Technologies Used
 
@@ -170,6 +181,7 @@ XGBoost
 Streamlit
 
 Joblib
+
 
 🚀 Future Improvements
 
